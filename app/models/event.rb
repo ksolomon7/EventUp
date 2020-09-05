@@ -3,5 +3,6 @@ class Event < ApplicationRecord
   has_many :user_events
   has_many :users, through: :user_events
 
-  validates
+  # validates :name, presence: true
+  # validates :venue, presenece: true
 end
