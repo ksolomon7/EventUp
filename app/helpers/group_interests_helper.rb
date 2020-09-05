@@ -1,0 +1,2 @@
+module GroupInterestsHelper
+end
