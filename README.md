@@ -1,5 +1,6 @@
 # README
 
+Team members: Kalkidan Taye, and Patrick Pierre
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
