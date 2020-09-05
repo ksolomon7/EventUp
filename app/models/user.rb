@@ -8,7 +8,7 @@ class User < ApplicationRecord
     # validates :age, numericality: { only_integer:true, greater_than:17, less_than: 60 }
     # validates :password, presence: true, confirmation: true, length: {in: 8..20}
 
-    # def full_name
-    #     self.first_name + " " + self.last_name
-    # end
+    def full_name
+        self.first_name + " " + self.last_name
+    end
 end
