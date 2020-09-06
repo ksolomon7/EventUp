@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
     def login
-        flash[:error]
+        @error=flash[:error]
     end
 
     def handle_login
@@ -9,8 +9,8 @@ class UsersController < ApplicationController
         if @user && @user.authenticate(params[:password])
             redirect_to user_path(@user)
         else
-            redirect_to login_path
-            flash[:error] = "Incorrect username or password" 
+            flash[:error] = "Incorrect username or password"
+            redirect_to login_path 
         end
     end
 

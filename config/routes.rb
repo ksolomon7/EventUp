@@ -33,6 +33,9 @@ Rails.application.routes.draw do
   delete "/events/:id", to: "events#destroy", as: "destroy_event"
 
   #routes user_events
+  get '/userevents/new', to: "userevents#new", as: "new_user_event"
+  post '/userevents', to: "userevents#create"
+  
 
   #routes for group_interests
 

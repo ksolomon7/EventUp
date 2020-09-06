@@ -12,11 +12,8 @@ class EventsController < ApplicationController
     end
 
     def create
-        byebug
         @event = Event.create(event_params())
     end
-
-
 
 
     def event_params(args)

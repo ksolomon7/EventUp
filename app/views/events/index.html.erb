@@ -1,1 +1,7 @@
 <h1> This is for the index page </h1>
+
+<ul>
+<% @events.map do |event| %>
+    <li><%=link_to event.name, event_path(event)%></li>
+<%end%>
+</ul>

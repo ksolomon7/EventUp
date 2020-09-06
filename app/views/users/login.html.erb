@@ -1,5 +1,11 @@
 <h1> This is the Log in Page </h1>
 
+<% if @error %>
+    <p><%= @error %></p>
+<%end%>
+
+
+
 <%= form_tag "/submit_log_in_form" do%>
 <%= label_tag :username%>
 <%= text_field_tag :username%>
