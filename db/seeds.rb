@@ -24,11 +24,11 @@ jonathan = User.create!(first_name:"Jonathan", last_name:"Gilber", username:"gil
 justin=User.create!(first_name:"Justin", last_name:"Bieber", username:"thebiebs", age: 21, profile_description: "I am looking to explore the little interests in life, through music", password: "abcde123")
 
 ##############################Groups###############################
-group1= Group.new(name: "Flatiron School")
-group2=Group.new(name: "Matcha Tea Store")
-group3= Group.new(name: "Julliard School of Arts")
-group4= Group.new(name:"Howard University")
-group5= Group.new(name:"Starbucks")
+group1= Group.new(name: "Flatiron School", description: "An educational organization founded in 2012; we teach humans how to code.")
+group2=Group.new(name: "Matcha Tea Store", description: "A place Annie goes to buy tea sometimes.")
+group3= Group.new(name: "Julliard School of Arts", description: "Private performing arts conservatory in NYC, regarded as one of the world's leading drama, music, and dance schools.")
+group4= Group.new(name:"Howard University", description:"HU,you know!!!")
+group5= Group.new(name:"Starbucks", description: "A place where you can buy expensive coffee that is not better than Dunkin Donuts.")
 
 ##############################Events###############################
 event1 = Event.create!(name:"Black Women Who Code", date_and_time: DateTime.new(2020,12,29,21,30), price:rand(1..100),venue: "Howard University Hall", group: group4)
