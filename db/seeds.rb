@@ -31,7 +31,7 @@ group4= Group.new(name:"Howard University")
 group5= Group.new(name:"Starbucks")
 
 ##############################Events###############################
-event1 = Event.create!(name:"Black Women Who Code", date_and_time: DateTime.new(2020,12,29,21,30), price:rand(1..100),venue: "Howard University", group: group4)
+event1 = Event.create!(name:"Black Women Who Code", date_and_time: DateTime.new(2020,12,29,21,30), price:rand(1..100),venue: "Howard University Hall", group: group4)
 event2 = Event.create!(name:"Black Engineers", date_and_time: DateTime.new(2020,12,29,21,30), price:rand(1..100),venue: "Downtown Location", group: group1)
 event3 = Event.create!(name:"Greentea Lovers", date_and_time: DateTime.new(2020,9,28,7,30), price:rand(1..100), venue: "42nd Street-Matcha Store", group:group2)
 event4= Event.create!(name:"Code Along with Sylwia", date_and_time:DateTime.new(2020,11,20,15,30), price:rand(1..100), venue: "Flatiron Campus", group:group1)

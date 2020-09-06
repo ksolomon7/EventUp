@@ -1,7 +1,10 @@
+<p>Please fill out the following information</p>
+<hr>
+
 <%= form_for @group do |f| %>
     <%= f.label :name %>
-    <%= f.text_field :first_name %><br>
+    <%= f.text_field :name %><br>
     <%= f.label :password %>
     <%= f.password_field :password %><br>
-    <%= f.submit "Register User" %><br>
+    <%= f.submit "Register Group" %><br>
 <%end%>

@@ -1,0 +1,10 @@
+<h1> This is the user registration </h1>
+<%byebug%>
+<%= form_for @userevent do |f| %>
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %><br>
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %><br>
+    <%= f.collection_select :event_id, Event.all, :id, :name %>
+    <%= f.submit "Register User" %><br>
+<%end%>

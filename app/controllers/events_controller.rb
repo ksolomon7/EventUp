@@ -12,11 +12,17 @@ class EventsController < ApplicationController
     end
 
     def create
-        @event = Event.create(event_params())
+        @event = Event.create(event_params)
     end
 
+    def destroy
+        @event= Event.find(params[:id])
+        @event.destroy
+        # need to send it back to the page
+    end
 
-    def event_params(args)
-        params.require(:events).permit(args)
+###############helper method###############################
+    def event_params
+        params.require(:event).permit(:name, :date_and_time, :price, :venue, :group)
     end
 end
