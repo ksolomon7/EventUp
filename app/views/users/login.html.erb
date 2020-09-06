@@ -12,4 +12,9 @@
 <%= label_tag :password%>
 <%= password_field_tag :password%>
 <%= submit_tag "Log in"%>
-<%end%>
+<%end%><br>
+
+<hr>
+
+<%= link_to '<button>Register New User</button>'.html_safe, new_user_path %><br><br>
+<%= link_to '<button>Register New Group</button>'.html_safe, new_group_path %>

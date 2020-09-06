@@ -5,4 +5,8 @@ class Event < ApplicationRecord
 
   validates :name, presence: true
   validates :venue, presence: true
+
+  def group_name
+    self.group.name
+  end
 end

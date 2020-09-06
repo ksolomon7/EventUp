@@ -1,0 +1,23 @@
+<p> Please fillout the following information </p>
+
+<% if @error %>
+    <% @error.each do |error| %>
+    <%= error %><br>
+    <%end%>
+<%end%>
+
+<%= form_for @user do |f| %>
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %><br>
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %><br>
+    <%= f.label :username %>
+    <%= f.text_field :age %><br>
+    <%= f.label :age %>
+    <%= f.number_field :age %><br>
+    <%= f.label :profile_description %>
+    <%= f.text_field :profile_description %><br>
+    <%= f.label :password %>
+    <%= f.password_field :password %><br>
+    <%= f.submit "Register User" %><br>
+<%end%>

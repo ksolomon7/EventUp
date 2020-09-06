@@ -1,4 +1,26 @@
 class UsersController < ApplicationController
+    
+    def new 
+        @error= flash[:error]
+        @user=User.new
+    end
+
+    def create
+        @user= User.create(user_params)
+        
+        if @user.valid? 
+            redirect_to user_path
+        else
+            flash[:error]=@user.errors.full_messages
+            redirect_to new_user_path
+        end
+    end
+
+    def show
+        @user = User.find(params[:id])
+    end
+
+###############custom actions ####################################   
     def login
         @error=flash[:error]
     end
@@ -15,14 +37,10 @@ class UsersController < ApplicationController
     end
 
 
-    def show
-        @user = User.find(params[:id])
+##################helper methods#################################
+
+    def user_params
+        params.require(:user).permit(:first_name, :last_name, :username, :age, :profile_descriptions, :password)
     end
-
-
-
-
-
-
 
 end

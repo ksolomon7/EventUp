@@ -1,1 +1,7 @@
 <h1> <%=@event.name %> </h1>
+
+<li> <%=@event.date_and_time %> </li>
+<li> <%=@event.price%> dollars </li>
+<li> <%=@event.venue%> </li>
+<li> <%=@event.group_name %> </li>
+<%= link_to '<button>Back To All Events</button>'.html_safe, events_path %>

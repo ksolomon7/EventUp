@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
 
-  #routes for users
+  #################################routes for users###################################################
   get "/users/new", to: "users#new", as: "new_user"
   post "/users", to: "users#create"
   get "/users/:id", to: "users#show", as: "user"
@@ -19,11 +19,19 @@ Rails.application.routes.draw do
   get "/login", to: "users#login", as: "login"
   post "/submit_log_in_form", to: "users#handle_login"
 
-  #routes for groups
+  #################################routes for groups###################################################
+  get "/groups", to: "groups#index", as: "groups"
+  get "/groups/new", to: "groups#new", as: "new_group"
+  post "/groups", to: "groups#create"
+  get "/groups/:id", to: "groups#show", as: "group"
 
-  #routes for interests
 
-  #routes for events
+  
+
+  #################################routes for interests###################################################
+
+
+  #################################routes for events######################################################
   get "/events", to: "events#index", as: "events"
   get "/events/new", to: "events#new", as: "new_event"
   post "/events", to: "events#create"
@@ -32,12 +40,13 @@ Rails.application.routes.draw do
   patch "/events/:id", to: "events#update"
   delete "/events/:id", to: "events#destroy", as: "destroy_event"
 
-  #routes user_events
+  #################################routes for user_events#################################################
   get '/userevents/new', to: "userevents#new", as: "new_user_event"
   post '/userevents', to: "userevents#create"
   
+ #################################routes for group_interest###############################################
 
-  #routes for group_interests
 
+#################################routes for Homepage######################################################
   root to: 'pages#home'
 end
