@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
     before_action :set_current_user
-# skip_before_action :authorized_user, only: [:login, :handle_login, :new, :create]
+    # skip_before_action :authorized_user, only: [:login, :handle_login, :new, :create]
 
     def new 
         @error= flash[:error]
@@ -11,6 +11,7 @@ class UsersController < ApplicationController
         @user= User.create(user_params)
         
         if @user.valid? 
+            session[:user_id]= @user.id
             redirect_to user_path(@user)
         else
             flash[:error]=@user.errors.full_messages
@@ -29,6 +30,7 @@ class UsersController < ApplicationController
     end
 
     def handle_login
+        byebug
         @user = User.find_by(username: params[:username])
 
         if @user && @user.authenticate(params[:password])
@@ -48,7 +50,7 @@ class UsersController < ApplicationController
 ##################helper methods#################################
 
     def user_params
-        params.require(:user).permit(:first_name, :last_name, :username, :age, :profile_descriptions, :password)
+        params.require(:user).permit(:first_name, :last_name, :username, :age, :profile_description, :password)
     end
 
 end

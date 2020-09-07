@@ -4,7 +4,7 @@ class User < ApplicationRecord
     has_secure_password
     validates :first_name, presence: true
     validates :last_name, presence: true
-    validates :username, uniqueness: true
+    # validates :username, uniqueness: true
     validates :age, numericality: { only_integer:true, greater_than:17, less_than: 60 }
     validates :password, presence: true, confirmation: true, length: {in: 8..20}
 
