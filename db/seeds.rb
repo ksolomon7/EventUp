@@ -40,9 +40,9 @@ event4= Event.create(name:"Code Along with Sylwia", date_and_time:DateTime.new(2
 event5=Event.create(name:"Salsa Con Fuego", date_and_time:DateTime.new(2020,11,20,15,30), price:rand(1..100), venue: "63rd Street", group:group3)
 event6 = Event.create(name:"Sip and spill", date_and_time: DateTime.new(2020,9,28,7,30), price:rand(1..100), venue: "Bryant Park-Starbucks", group:group5)
 ###############################User Events###########################
-userevent1= UserEvent.create(user_id: daisy.id, event_id: event1.id)
-userevent2=UserEvent.create(user_id: daisy.id, event_id: event2.id)
-userevent3=UserEvent.create(user_id: daisy.id, event_id: event5.id)
+userevent1= UserEvent.create(user: daisy, event: event1)
+userevent2=UserEvent.create(user: daisy, event: event2)
+userevent3=UserEvent.create(user: daisy, event: event5)
 ##############################Interests###############################
 
 interest1= Interest.create(name: "GreenTea Lovers", description: "A group for the tea lover in you!")

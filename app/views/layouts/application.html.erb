@@ -17,7 +17,7 @@
     <div id = "logged-in"> 
         Logged In: <%= @current_user.first_name%> 
     </div>
-    <div id = "logged-out" style="padding:10px;"> <%= link_to '<button>Log Out</button>'.html_safe, logout_path %></div>
+    <div id = "logged-out" style="padding:10px;"> <%= link_to '<button>Log Out</button>'.html_safe, logout_path, method: :delete %></div>
   <%else %>
       <div>
         <p style= "color:red;"> You are not Logged in</p>
