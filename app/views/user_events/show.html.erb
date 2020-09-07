@@ -1,4 +1,4 @@
-<h1> <%= @userevent.event_name %> </h1>
+<h1> <%= link_to @userevent.event_name, group_path(@group) %> </h1>
 
 <ul>
 <li> <%=@userevent.event.date_and_time %> </li>
@@ -7,3 +7,4 @@
 </ul>
 
 <%=button_to "Delete Event", delete_user_event_path(@userevent), method: :delete %>
+<%=button_to "Back to Your Events", user_events_path, method: :get %>

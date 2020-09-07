@@ -33,21 +33,30 @@ group4= Group.new(name:"Howard University", description:"HU,you know!!!")
 group5= Group.new(name:"Starbucks", description: "A place where you can buy expensive coffee that is not better than Dunkin Donuts.")
 
 ##############################Events###############################
-event1 = Event.create!(name:"Black Women Who Code", date_and_time: DateTime.new(2020,12,29,21,30), price:rand(1..100),venue: "Howard University Hall", group: group4)
-event2 = Event.create!(name:"Black Engineers", date_and_time: DateTime.new(2020,12,29,21,30), price:rand(1..100),venue: "Downtown Location", group: group1)
-event3 = Event.create!(name:"Greentea Lovers", date_and_time: DateTime.new(2020,9,28,7,30), price:rand(1..100), venue: "42nd Street-Matcha Store", group:group2)
-event4= Event.create!(name:"Code Along with Sylwia", date_and_time:DateTime.new(2020,11,20,15,30), price:rand(1..100), venue: "Flatiron Campus", group:group1)
-event5=Event.create!(name:"Salsa Con Fuego", date_and_time:DateTime.new(2020,11,20,15,30), price:rand(1..100), venue: "63rd Street", group:group3)
-event6 = Event.create!(name:"Sip and spill", date_and_time: DateTime.new(2020,9,28,7,30), price:rand(1..100), venue: "Bryant Park-Starbucks", group:group5)
+event1 = Event.create(name:"Black Women Who Code", date_and_time: DateTime.new(2020,12,29,21,30), price:rand(1..100),venue: "Howard University Hall", group: group4)
+event2 = Event.create(name:"Black Engineers", date_and_time: DateTime.new(2020,12,29,21,30), price:rand(1..100),venue: "Downtown Location", group: group1)
+event3 = Event.create(name:"Greentea Lovers", date_and_time: DateTime.new(2020,9,28,7,30), price:rand(1..100), venue: "42nd Street-Matcha Store", group:group2)
+event4= Event.create(name:"Code Along with Sylwia", date_and_time:DateTime.new(2020,11,20,15,30), price:rand(1..100), venue: "Flatiron Campus", group:group1)
+event5=Event.create(name:"Salsa Con Fuego", date_and_time:DateTime.new(2020,11,20,15,30), price:rand(1..100), venue: "63rd Street", group:group3)
+event6 = Event.create(name:"Sip and spill", date_and_time: DateTime.new(2020,9,28,7,30), price:rand(1..100), venue: "Bryant Park-Starbucks", group:group5)
 ###############################User Events###########################
 userevent1= UserEvent.create(user_id: daisy.id, event_id: event1.id)
 userevent2=UserEvent.create(user_id: daisy.id, event_id: event2.id)
 userevent3=UserEvent.create(user_id: daisy.id, event_id: event5.id)
 ##############################Interests###############################
 
-interest1= Interest.create!(name: "GreenTea Lovers", description: "A group for the tea lover in you!")
-interest2= Interest.create!(name: "Women Coders", description: "Motivated, young web engineers. Do you want to change the world, one website at a time!")
-interest3= Interest.create!(name: "Dancers", description: "Dance, feel, and party the night away!")
+interest1= Interest.create(name: "GreenTea Lovers", description: "A group for the tea lover in you!")
+interest2= Interest.create(name: "Women Coders", description: "Motivated, young web engineers. Do you want to change the world, one website at a time!")
+interest3= Interest.create(name: "Dancers", description: "Dance, feel, and party the night away!")
+interest4= Interest.create(name: "Software Engineering", description: "Web development, dev ops, software engineering!")
+interest5= Interest.create(name: "Black Engineer", description: "To increase the number of culturally responsible Black engineers who excel academically, succeed professionally, and positively impact the community.")
+
+##########################Group Interests################################
+groupinterest1= GroupInterest.create(group_id:group1.id, interest_id:interest2.id)
+groupinterest2= GroupInterest.create(group_id:group1.id, interest_id:interest4.id)
+groupinterest3= GroupInterest.create(group_id:group1.id, interest_id:interest5.id)
+groupinterest4= GroupInterest.create(group_id:group3.id, interest_id:interest3.id)
+
 
 
 puts "I have seeded the database"

@@ -3,3 +3,5 @@
 <% @userevents.map do |userevent| %>
     <%= link_to userevent.event_name, user_event_path(userevent) %><br>
 <%end%>
+
+<%=button_to "Back to Your Events", user_path(@current_user), method: :get %>

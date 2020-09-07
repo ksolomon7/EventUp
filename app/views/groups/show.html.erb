@@ -1,5 +1,10 @@
 <h1> <%= @group.name %> </h1>
+<hr>
 
-<p> Please select from the following options </p>
+<strong><%= @group.description %><br></strong>
 
-<li> Add an Event </li> <%= link_to '<button>Back To All Events</button>'.html_safe, events_path %>
+<ul>
+<% @interest.all.map do |interest| %>
+       <li> <%= link_to interest.name, interest_path(interest)%> <br> </li>
+<% end %>
+</ul>

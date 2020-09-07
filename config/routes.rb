@@ -18,7 +18,7 @@ Rails.application.routes.draw do
 
   get "/login", to: "users#login", as: "login"
   post "/submit_log_in_form", to: "users#handle_login"
-
+  delete "/logout", to: "users#logout", as: "logout"
   #################################routes for groups###################################################
   get "/groups", to: "groups#index", as: "groups"
   get "/groups/new", to: "groups#new", as: "new_group"
@@ -26,7 +26,8 @@ Rails.application.routes.draw do
   get "/groups/:id", to: "groups#show", as: "group"
 
   #################################routes for interests###################################################
-
+  get "/interest", to: "interests#index", as: "interests"
+  get "/interests/:id", to: "interests#show", as: "interest"
 
   #################################routes for events######################################################
   get "/events", to: "events#index", as: "events"

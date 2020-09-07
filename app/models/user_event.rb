@@ -6,5 +6,7 @@ class UserEvent < ApplicationRecord
     self.event.name 
   end
 
-
+  def group
+    self.event.group_id
+  end
 end

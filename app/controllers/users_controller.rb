@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+# skip_before_action :authorized_user, only: [:login, :handle_login, :new, :create]
 
     def new 
         @error= flash[:error]

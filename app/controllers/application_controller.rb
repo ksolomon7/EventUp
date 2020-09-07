@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
     before_action :set_current_user
     helper_method :check_current_user
-    # skip_before_action :authorized_user
+    
 
     def set_current_user
         @current_user = User.find_by(id: session[:id])
@@ -14,4 +14,5 @@ class ApplicationController < ActionController::Base
     def authorized_user
         redirect_to login_path unless check_current_user
     end
+
 end
