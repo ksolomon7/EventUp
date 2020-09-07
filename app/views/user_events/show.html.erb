@@ -1,0 +1,9 @@
+<h1> <%= @userevent.event_name %> </h1>
+
+<ul>
+<li> <%=@userevent.event.date_and_time %> </li>
+<li> <%=@userevent.event.price %> dollars</li>
+<li> <%=@userevent.event.venue %> </li>
+</ul>
+
+<%=button_to "Delete Event", delete_user_event_path(@userevent), method: :delete %>

@@ -10,18 +10,20 @@ User.delete_all
 Event.delete_all
 Group.delete_all
 Interest.delete_all
+UserEvent.delete_all
 
 User.reset_pk_sequence
 Event.reset_pk_sequence
 Group.reset_pk_sequence
 Interest.reset_pk_sequence
+UserEvent.reset_pk_sequence
 
 
 ##############################Users###############################
-daisy = User.create!(first_name:"Kalkidan", last_name:"Taye", username:"daisy123", age: 40, profile_description: "I'm just here", password: "abcde123")
-patrick= User.create!(first_name: "Patrick", last_name:"Pierre", username:"patrick01", age: 25, profile_description: "We're all to tired", password:"abcde123")
-jonathan = User.create!(first_name:"Jonathan", last_name:"Gilber", username:"gilbear73", age: 30, profile_description: "Just a young boy looking to have fun", password: "abcde123")
-justin=User.create!(first_name:"Justin", last_name:"Bieber", username:"thebiebs", age: 21, profile_description: "I am looking to explore the little interests in life, through music", password: "abcde123")
+daisy = User.create(first_name:"Kalkidan", last_name:"Taye", username:"daisy123", age: 40, profile_description: "I'm just here", password: "abcde123")
+patrick= User.create(first_name: "Patrick", last_name:"Pierre", username:"patrick01", age: 25, profile_description: "We're all to tired", password:"abcde123")
+jonathan = User.create(first_name:"Jonathan", last_name:"Gilber", username:"gilbear73", age: 30, profile_description: "Just a young boy looking to have fun", password: "abcde123")
+justin=User.create(first_name:"Justin", last_name:"Bieber", username:"thebiebs", age: 21, profile_description: "I am looking to explore the little interests in life, through music", password: "abcde123")
 
 ##############################Groups###############################
 group1= Group.new(name: "Flatiron School", description: "An educational organization founded in 2012; we teach humans how to code.")
@@ -37,7 +39,10 @@ event3 = Event.create!(name:"Greentea Lovers", date_and_time: DateTime.new(2020,
 event4= Event.create!(name:"Code Along with Sylwia", date_and_time:DateTime.new(2020,11,20,15,30), price:rand(1..100), venue: "Flatiron Campus", group:group1)
 event5=Event.create!(name:"Salsa Con Fuego", date_and_time:DateTime.new(2020,11,20,15,30), price:rand(1..100), venue: "63rd Street", group:group3)
 event6 = Event.create!(name:"Sip and spill", date_and_time: DateTime.new(2020,9,28,7,30), price:rand(1..100), venue: "Bryant Park-Starbucks", group:group5)
-
+###############################User Events###########################
+userevent1= UserEvent.create(user_id: daisy.id, event_id: event1.id)
+userevent2=UserEvent.create(user_id: daisy.id, event_id: event2.id)
+userevent3=UserEvent.create(user_id: daisy.id, event_id: event5.id)
 ##############################Interests###############################
 
 interest1= Interest.create!(name: "GreenTea Lovers", description: "A group for the tea lover in you!")

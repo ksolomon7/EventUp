@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-    #skip_before_action :authorized_user
 
     def new 
         @error= flash[:error]
@@ -18,21 +17,21 @@ class UsersController < ApplicationController
     end
 
     def show
-        byebug
         @current_user = User.find_by(id:session[:user_id])
     end
 
+   
 ###############custom actions ####################################   
     def login
         @error=flash[:error]
     end
 
     def handle_login
-        @user = User.find_by(username:params["username"])
+        @user = User.find_by(username: params[:username])
 
         if @user && @user.authenticate(params[:password])
             session[:user_id]= @user.id
-            redirect_to user_path(session[:user_id])
+            redirect_to user_path(@user)
         else
             flash[:error] = "Incorrect username or password"
             redirect_to login_path 

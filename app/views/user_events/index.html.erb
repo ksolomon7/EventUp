@@ -1,0 +1,5 @@
+<h1> Your Events </h1>
+
+<% @userevents.map do |userevent| %>
+    <%= link_to userevent.event_name, user_event_path(userevent) %><br>
+<%end%>
