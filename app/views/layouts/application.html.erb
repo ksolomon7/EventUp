@@ -12,6 +12,17 @@
   </head>
 
   <body>
+
+    <% if check_current_user_logged_in?%>
+    <div id = "logged-in"> 
+      Logged In: <%= @current_user.first_name%> 
+    </div>
+    <div id = "logged-out" style="padding:10px;"> <%= link_to '<button>Login Out</button>'.html_safe, logout_path %>
+  <%else %>
+      <div>
+        <p style= "color:red;"> You are not Logged in</p>
+      </div>
+  <%end%>
     <%= yield %>
   </body>
 </html>

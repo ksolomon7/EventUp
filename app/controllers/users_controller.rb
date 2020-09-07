@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+    before_action :set_current_user
 # skip_before_action :authorized_user, only: [:login, :handle_login, :new, :create]
 
     def new 

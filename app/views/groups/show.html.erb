@@ -8,3 +8,5 @@
        <li> <%= link_to interest.name, interest_path(interest)%> <br> </li>
 <% end %>
 </ul>
+
+<%=button_to "Back to Main Page", user_path(@current_user), method: :get %>

@@ -1,5 +1,5 @@
 class GroupsController < ApplicationController
-
+   
     def new
         @group= Group.new
     end
@@ -12,6 +12,7 @@ class GroupsController < ApplicationController
     def show
         @group= Group.find(params[:id])
         @interest= @group.interests
+        @current_user = User.find_by(id:session[:user_id])
     end
 #############helper method################
 
