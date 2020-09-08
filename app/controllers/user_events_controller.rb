@@ -1,8 +1,7 @@
 class UserEventsController < ApplicationController
 
     def index
-        @userevents= UserEvent.all 
-        @current_user= User.find_by(id: session[:user_id])
+        @userevents= UserEvent.where(user_id:@current_user.id)
     end
 
     def show
@@ -12,17 +11,26 @@ class UserEventsController < ApplicationController
 
     def new
         @userevent= UserEvent.new
-        @current_user = User.find_by(id:session[:user_id])
     end
 
     def create
-        @user= User.find_by(first_name: first_name)
-        @userevent= UserEvent.create(params.require(:userevent).permit(:user_id, :event_id))   
+        @userevent = UserEvent.new
+        @userevent.user_id = @current_user.id
+        @userevent.event_id = params[:user_event][:event_id]
+        @userevent.save
+        byebug
+        redirect_to user_event_path(@userevent)
     end
 
     def destroy
         @userevent= UserEvent.find(params[:id])
         @userevent.destroy
         redirect_to users_event_path
+    end
+
+    #=======Custom Methods===================
+    
+    def add_event
+        byebug
     end
 end

@@ -5,3 +5,4 @@
 <li> <%=@event.venue%> </li>
 <li> <%=@event.group_name %> </li>
 <%= link_to '<button>Back To All Events</button>'.html_safe, events_path %>
+<%= button_to "Add This Event", adds_event_path%>

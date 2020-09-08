@@ -44,6 +44,8 @@ Rails.application.routes.draw do
   post '/userevents', to: "user_events#create"
   get '/userevents/:id', to: 'user_events#show', as: 'user_event'
   delete '/userevents/:id', to: 'user_events#destroy', as: 'delete_user_event'
+
+  post "/userevents/add_event", to: "user_events#add_event", as: "adds_event"
   
  #################################routes for group_interest###############################################
 
