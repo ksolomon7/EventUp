@@ -1,4 +1,5 @@
 class UserEventsController < ApplicationController
+    # skip_before_action :update
 
     def index
         @userevents= UserEvent.where(user_id:@current_user.id)
@@ -18,14 +19,14 @@ class UserEventsController < ApplicationController
         @userevent.user_id = @current_user.id
         @userevent.event_id = params[:user_event][:event_id]
         @userevent.save
-        byebug
-        redirect_to user_event_path(@userevent)
+     
+        redirect_to user_events_path
     end
 
     def destroy
         @userevent= UserEvent.find(params[:id])
         @userevent.destroy
-        redirect_to users_event_path
+        redirect_to user_events_path
     end
 
     #=======Custom Methods===================

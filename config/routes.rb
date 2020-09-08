@@ -13,8 +13,8 @@ Rails.application.routes.draw do
   post "/users", to: "users#create"
   get "/users/:id", to: "users#show", as: "user"
   get "/users/:id/edit", to: "users#edit", as: "edit_user"
-  patch "/users/:id", to: "users#update"
-  delete "/users/:id", to: "users#destroy"
+  patch "/users/:id", to: "users#update", as: "update_user"
+  delete "/users/:id", to: "users#destroy", as: "delete_user"
 
   get "/login", to: "users#login", as: "login"
   post "/submit_log_in_form", to: "users#handle_login"
@@ -52,4 +52,5 @@ Rails.application.routes.draw do
 
 #################################routes for Homepage######################################################
   root to: 'pages#home', as: "home_page"
+  get '/pages', to: 'pages#index', as: "pages"
 end
