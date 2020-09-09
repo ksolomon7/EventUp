@@ -1,8 +1,8 @@
-<h1> This is the user registration </h1>
+<h1> Select your Event from the list below </h1>
 
 <%= form_for @userevent do |f| %>
     <%#= f.label :first_name%><br>
     <%#= f.text_field :user_id, value: @current_user.full_name%><br>
-    <%= f.collection_select :event_id, Event.all, :id, :name %>
+    <%= f.collection_select :event_id, Event.all, :id, :name %> 
     <%= f.submit "Register User" %><br>
 <%end%>

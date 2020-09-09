@@ -2,7 +2,25 @@
 
 
 
-<%= link_to '<button>Lookup Events</button>'.html_safe, events_path %>
-<%= link_to '<button>Look at Your Events</button>'.html_safe, user_events_path%>
-<%= link_to '<button>Register For Event</button>'.html_safe, new_user_event_path %>
-<%= link_to '<button>Your Profile</button>'.html_safe, edit_user_path(@current_user) %>
+<%#= link_to '<button>Lookup Events</button>'.html_safe, events_path %>
+<%#= link_to '<button>Look at Your Events</button>'.html_safe, user_events_path%>
+<%#= link_to '<button>Register For Event</button>'.html_safe, new_user_event_path %>
+<%#= link_to '<button>Your Profile</button>'.html_safe, edit_user_path(@current_user) %>
+
+
+
+
+
+
+<div id = "user-options" class = "row text-center">
+    <div class = "col-8">
+    <h1 style = "font-size: 36px;">Hello, <%= @current_user.full_name%></h1>
+    <br>
+
+    <%= link_to '<button class = "btn btn-info" style = "font-size: 20px;width:30%; padding:5px;margin:10px;"><i class="fa fa-search" aria-hidden="true"></i> Lookup Events </button>'.html_safe, events_path %> <br>
+    <%= link_to '<button class = "btn btn-secondary" style = "font-size: 20px;width:30%; padding:5px; margin:10px;"><i class="fa fa-calendar" aria-hidden="true"></i> My Events </button>'.html_safe, user_events_path%><br>
+    <%= link_to '<button class = "btn btn-dark" style = "font-size: 20px;width:30%; padding:5px;margin:10px;"><i class="fa fa-registered" aria-hidden="true"></i> Register For Event </button>'.html_safe, new_user_event_path %><br>
+    <%= link_to '<button class = "btn btn-light" style = "background-color:#BEBEFF;font-size: 20px;width:30%;padding:5px;margin:10px"><i class=\'fa fa-address-card-o\'></i> Your Profile </button>'.html_safe, edit_user_path(@current_user) %>
+    </div>
+</div>
+

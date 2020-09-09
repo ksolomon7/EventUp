@@ -1,30 +1,55 @@
 <!DOCTYPE html>
 <html>
-  <head>
-  <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <title>EventUp</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+    <head>
+        <!-- Latest compiled and minified CSS -->
+        <title>EventUp</title>
+        <%= csrf_meta_tags %>
+        <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+        <!-- Recommended Bootstrap meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <body>
+        <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-    <% if check_current_user%>
-    <div id = "logged-in"> 
-        Logged In: <%= @current_user.first_name%> 
-    </div>
-    <div id = "logged-out" style="padding:10px;"> <%= button_to 'Log out', logout_path, method: :delete %></div>
-  <%else %>
-      <div>
-        <p style= "color:red;"> You are not Logged in</p>
-      </div>
-  <%end%>
-    <%= yield %>
-  </body>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+
+    <body>
+        <div id="main-container" class="container-fluid">
+            <div id="header-div" class="row">
+                <div class="col-12 jumbotron" style="width: 100%; background-color:white; border-bottom:solid 1px gray; padding:5px;">
+                    <header style="font-size:35px;">
+                        Event Up
+                    </header>
+                    <% if check_current_user == nil%>
+                        <div id="logged-in" class="float-right">
+                            <p>Logged In:
+                                <%= @current_user.first_name%></p>
+                        </div>
+                        <div id="logged-out" style="padding:10px;" class="float-right">
+                            <%= link_to '<button class = "btn btn-danger">Log Out</button>'.html_safe, logout_path, method: :delete %></div>
+                        <%else %>
+                        <div id="login-msg" class="float-right">
+                            <p style="color:red;">
+                                You are not Logged in</p>
+                        </div>
+                        <%end%>
+
+                    </div>
+                </div>
+
+
+                <%= yield %>
+
+            </div>
+            <!-- JavaScript Dependencies for Bootstrap -->
+            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+        </body>
+    </body>
 </html>
-
 

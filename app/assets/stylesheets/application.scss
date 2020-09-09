@@ -13,5 +13,36 @@
  *= require_tree .
  *= require_self
  */
-// @import "bootstrap-sprockets";
-// @import "bootstrap";
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+ // My Google Font for Event Up
+ @import url('https://fonts.googleapis.com/css?family=Archivo+Black&display=swap');
+ 
+ * {
+     font-size:18x;
+ }
+ 
+ body{
+     background-color:black;
+ }
+ 
+ body, html, .container-fluid {
+     height: 100vh;
+     margin:0;
+ }
+ 
+ #logged-in, #login-msg{
+     font-size:16px;
+ }
+ 
+ header{
+     font-family: "Archivo Black";
+     color: #da800b;
+     float:left;
+ }
+ 
+ #home-page-img{
+     //Full height image
+     height:75%;
+ }
+ 

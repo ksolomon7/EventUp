@@ -1,10 +1,67 @@
+
 <style>
-    #logged-out{
+
+    #main-container{
+        padding:0px;
+        margin:0px;
+    }
+
+    #header-div{
+        display:none;
+    }
+
+    .masthead {
+    min-height: 100vh;
+    background-image: url('https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width:100%;
+    color:white;
+    }
+
+    .jumbotron{
+        background-color: #836953;
+       /* .max-width:450px; */
+    }
+
+    #border{
+        border-style:solid;
+        background-color:#836953;
+        max-width: 400px;
+        top: 5rem;
+        left:5rem;
+        padding: 50px;
+    }
+    
+    button{
+        width:80%;
+        padding: .5rem;
+        margin-left: 5rem;
+        font-size:1.25rem;
+        line-height:1.5;
+        border-radius: .4rem;
+        color:white;
+        background-color:#FF8C00
+    }
+
+    #login-msg{
         visibility:hidden;
     }
+
 </style>
 
-<h1> Welcome to the Home Page </h1>
 
-
-<%= link_to '<button>Login</button>'.html_safe, login_path %>
+<div class = "row">
+ <div class = "col-12" style = " padding:0; margin:0;">
+  <div class = "masthead d-flex justify-content-start">
+<div>
+    <div id = "border" class = "border position-relative">
+        <h2 class = "text-center" style = "font-weight:bold;">Event Up</h2>
+        <p class = "text-center" style = "margin-right:0.5rem; font-size:20px;"> Great Events Just a click away</p>
+        <hr>
+        <%= link_to '<button class = "text-center">Login</button>'.html_safe, login_path %>
+    </div>
+   </div>
+  </div>
+</div>

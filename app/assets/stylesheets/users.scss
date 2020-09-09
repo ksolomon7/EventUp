@@ -1,3 +1,46 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.form{
+    top:10rem;
+    left:20rem;
+    font-size:16px;
+    padding: 60px;
+    border:solid 3px gainsboro;
+    border-radius: 10%;
+    background-color:white
+}
+
+.submit-btn{
+    width:90%;
+
+}
+
+.route-btns{
+    position: relative;
+    top: 38rem;
+    right:10rem;
+    margin:0px 5px 0 5px;
+    padding:3px;
+}
+
+#new_user{
+    padding:10px;
+    font-size:16px;
+    border:solid 3px gainsboro;
+    border-radius: 10%;
+    background-color:whitesmoke;
+    position:relative;
+}
+
+#new_user > input{
+    margin:10px;
+    width:40%;
+}
+
+#user-options{
+    position:relative;
+    top:40px;
+    left:25px;
+}
