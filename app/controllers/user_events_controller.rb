@@ -32,6 +32,10 @@ class UserEventsController < ApplicationController
     #=======Custom Methods===================
     
     def add_event
-        byebug
+        @userevent = UserEvent.new
+        @userevent.user_id = @current_user.id
+        @userevent.event_id = session[:event_id]["id"]
+        @userevent.save
+        redirect_to pages_path
     end
 end
