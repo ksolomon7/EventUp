@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
-    before_action :authorized_user
+    # before_action :authorized_user
+    before_action :set_current_user
     helper_method :check_current_user
   
     

@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
     # before_action :get_user, only: [:update]
-    skip_before_action :authorized_user, only: [:login, :handle_login, :new, :create]
+    # skip_before_action :authorized_user, only: [:login, :handle_login, :new, :create]
 
     def new 
         @error= flash[:error]
@@ -15,7 +15,8 @@ class UsersController < ApplicationController
         
         if @user.valid? 
             session[:user_id]= @user.id
-            redirect_to user_path(session[:user_id])
+            redirect_to pages_path
+            # redirect_to user_path(session[:user_id])
         else
             flash[:error]=@user.errors.full_messages
             redirect_to new_user_path

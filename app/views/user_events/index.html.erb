@@ -1,12 +1,12 @@
 <h1> Your Events </h1>
-<%if @userevents%>
+
+<%if @userevents.present?%>
     <% @userevents.map do |userevent| %>
     <%= link_to userevent.event_name, user_event_path(userevent) %><br>
     <%end%>
-<% elsif @userevent %>
-    <%= link_to @userevent.event_name, user_event_path(@userevent)%>
-<%else%>
+<%elsif @userevents.empty?%>
     <p>You do not currently have any events</p>
 <%end%>
-
-<%=button_to "Back to Your Events", user_path(@current_user), method: :get %>
+<br>
+<br>
+<%=button_to "Back to Main Page", pages_path, method: :get %>

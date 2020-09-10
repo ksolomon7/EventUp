@@ -1,14 +1,18 @@
-<h1><%= @current_user.full_name%></h1>
+<h1><%= @current_user.full_name%></h1><br>
+<hr>
 
-<%byebug%>
-<%= @current_user.profile_description%>
+<strong>First Name:</strong><%= @current_user.first_name%><br>
+<strong>Last Name:</strong><%= @current_user.last_name%><br>
+<strong>Username:</strong><%= @current_user.username%><br>
+<strong>Age:</strong><%= @current_user.age%><br>
+<strong>Profile Description:</strong>
+<br>
+<%= @current_user.profile_description%><br>
 
-
-
-
-
-
-
+<br>
+<br>
+<hr>
 
 <%= link_to '<button>Edit Your Profile</button>'.html_safe, edit_user_path(@current_user) %>
 <%= button_to "Delete Your Profile", delete_user_path, method: :delete %>
+<%=button_to "Back to Main Page", pages_path, method: :get %>

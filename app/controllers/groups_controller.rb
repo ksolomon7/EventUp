@@ -10,7 +10,7 @@ class GroupsController < ApplicationController
     end
 
     def show
-        @group= Group.find(params[:id])
+        @group= Group.find_by(id:session[:event_id]["group_id"])
         @interest= @group.interests
     end
 #############helper method################

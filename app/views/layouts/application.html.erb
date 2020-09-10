@@ -24,7 +24,7 @@
                     <header style="font-size:35px;">
                         Event Up
                     </header>
-                    <% if check_current_user == nil%>
+                    <% if check_current_user %>
                         <div id="logged-in" class="float-right">
                             <p>Logged In:
                                 <%= @current_user.first_name%></p>

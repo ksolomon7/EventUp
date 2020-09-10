@@ -1,4 +1,4 @@
-<h1> <%=@event.name %> </h1>
+<h1> <%=link_to @event.name, group_path%></h1>
 
 <li> <%=@event.date_and_time %> </li>
 <li> <%=@event.price%> dollars </li>
