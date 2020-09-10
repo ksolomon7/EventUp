@@ -1,5 +1,5 @@
 # EventUp
-Welcome to EventUp!  <EventUp> is an event registering application, that allows a user to keep track of their events as well as gives them the capabilties to register for events that are available. Event up is built on ruby on rails with bootstrap used for front-end design.  
+Welcome to EventUp!  EventUp is an event registering application, that allows a user to keep track of their events as well as gives them the capabilties to register for events that are available. Event up is built on ruby on rails with bootstrap used for front-end design.  
 
 ### How to install and Use:
 1. Clone the repository and copy onto your terminal, with the git clone command.
@@ -13,4 +13,13 @@ Note: You can add, delete, and view events, while also having the ability to cha
 
 ### Contact:
 Created by: Kalkidan Taye (https://github.com/ksolomon7) and 
-Patrick Pierre — feel free to contact us!
+Patrick Pierre(https://github.com/pierrewebdev) — feel free to contact us!
+
+# Resources for seed data:
+https://www2.howard.edu/about/about-howard
+https://www.meetup.com/find/?keywords=dance
+https://www.meetup.com/find/?keywords=coffee
+https://www.meetup.com/find/?keywords=spoken%20word
+https://en.wikipedia.org/wiki/Juilliard_School
+https://en.wikipedia.org/wiki/Flatiron_School
+https://en.wikipedia.org/wiki/Starbucks
